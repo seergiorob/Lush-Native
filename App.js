@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Home from './src/Screens/Home'
+import Blog from './src/Screens/Blog'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
@@ -14,7 +15,8 @@ export default function App() {
   return (
     <Provider store={reduxStore}>
     <View style={styles.container}>
-      <Home/>
+      {/* <Home/> */}
+      <Blog/>
     </View>
     </Provider>
   );
