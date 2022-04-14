@@ -4,10 +4,14 @@ import SignUpComponent from '../Components/SignUp/SignUpComponent'
 
 export default function SignUpScreen() {
   return (
-    <View>
+    <View style={styles.signUpWrapper}>
         <SignUpComponent/>
     </View>
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  signUpWrapper: {
+    width: '100%',
+  }
+})

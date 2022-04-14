@@ -18,11 +18,11 @@ export default function App() {
   return (
     <Provider store={reduxStore}>
     <View style={styles.container}>
-      {/* <Home/> */}
+      <Home/>
       {/* <Blog/> */}
       {/* <SignInScreen/> */}
       {/* <SignUpScreen/> */}
-      <Shop/>
+      {/* <Shop/> */}
     </View>
     </Provider>
   );

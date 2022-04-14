@@ -12,8 +12,6 @@ export default function HomeBlogComponent() {
         dispatch(blogActions.fetchBlogs())
     }, [])
 
-    // console.log(blogs)
-
     let blogPost = []
     blogPost.push(blogs[0])
     console.log(blogPost)
@@ -22,16 +20,16 @@ export default function HomeBlogComponent() {
 
     
     <View>
-    {blogPost.map(blog => {
+    {blogPost?.map(blog => {
         return (  
-        <View key={blog._id}>
+        <View key={blog?._id}>
         <Text style={styles.title}>Our News</Text>
-        <Text style={styles.titleBlog}>{blog.blogTitle}</Text>
+        <Text style={styles.titleBlog}>{blog?.blogTitle}</Text>
         <Image
         style={styles.images} 
-        source={{uri:`https://lush-plants.herokuapp.com/img/blog/${blog.images}`}}
+        source={{uri:`https://lush-plants.herokuapp.com/img/blog/${blog?.images}`}}
         />
-        <Text style={styles.textBlog}>{blog.text}</Text>
+        <Text style={styles.textBlog}>{blog?.text}</Text>
         <Button
         title="GO TO NEWS"
         />

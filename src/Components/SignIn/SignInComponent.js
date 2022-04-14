@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, TextInput, Image  } from 'react-native'
+import { StyleSheet, Text, View, Button, TextInput, Image, ImageBackground  } from 'react-native'
 import React, { useRef, useState } from 'react'
 import userActions from '../../redux/actions/userActions.js';
 import { connect } from 'react-redux';
@@ -24,7 +24,7 @@ function SignInComponent(props) {
 
   return (
     <View style={styles.wrapperSignIn}>
-    
+    <ImageBackground source={require('../../../assets/img/hero.jpg')}  style={styles.imageSignIn}>
     {props.user ? ( 
       
     <View>
@@ -67,6 +67,7 @@ function SignInComponent(props) {
     </Button>
     </>
     )}
+    </ImageBackground>
     </View>
   )
 }
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
   wrapperSignIn: {
     backgroundColor: 'white',
     borderRadius: 16,
-    margin: 30,
+    // margin: 30,
     height: 500,
   },
   userInput: {
@@ -103,6 +104,11 @@ const styles = StyleSheet.create({
   textLogged: {
     fontSize: 25,
     textAlign: 'center',
+  },
+  imageSignIn: {
+    height: 1200,
+    width: '100%',
+    paddingTop: 100,
   },
   
 })

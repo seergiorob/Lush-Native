@@ -4,10 +4,14 @@ import SignInComponent from '../Components/SignIn/SignInComponent'
 
 export default function SignInScreen() {
   return (
-    <ScrollView>
+    <ScrollView style={styles.signInWrapper}>
         <SignInComponent/>
     </ScrollView>
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  signInWrapper: {
+    width: '100%'
+  },
+})

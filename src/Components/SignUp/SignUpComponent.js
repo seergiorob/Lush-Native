@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, Button, Image } from 'react-native'
+import { StyleSheet, Text, View, TextInput, Button, Image, ImageBackground } from 'react-native'
 import React, { useRef, useState } from 'react'
 import userActions from '../../redux/actions/userActions.js';
 import { connect } from 'react-redux';
@@ -33,7 +33,7 @@ function SignUpComponent(props) {
 
   return (
     <KeyboardAwareScrollView style={styles.wrapperSignUp}>
-      
+      <ImageBackground source={require('../../../assets/img/hero.jpg')}  style={styles.imageSignUp}>
       {props.user ? ( 
       
       <View>
@@ -94,7 +94,7 @@ function SignUpComponent(props) {
     </Button>
     </>
     )}
-    
+    </ImageBackground>
     </KeyboardAwareScrollView>
   )
 }
@@ -103,8 +103,8 @@ const styles = StyleSheet.create({
     wrapperSignUp: {
       backgroundColor: 'white',
       borderRadius: 16,
-      margin: 20,
-      padding: 15,
+      // margin: 20,
+      // padding: 15,
   },
     inputSignUp: {
     margin: 30,
@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'whitesmoke',
     padding: 10,
     borderRadius: 16,
+    color: 'black',
     },
     imgLogged: {
       width: 100,
@@ -126,7 +127,13 @@ const styles = StyleSheet.create({
       fontSize: 25,
       textAlign: 'center',
       marginBottom: 100,
+      color: 'black',
     },
+    imageSignUp: {
+      height: 1200,
+      width: '100%',
+      paddingTop: 100,
+    }
 })
 
 const mapDispatchToProps = {
