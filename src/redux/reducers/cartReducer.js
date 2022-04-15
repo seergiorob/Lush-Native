@@ -1,3 +1,5 @@
+
+
 const initialState = {
     cart: [],
     total: 0,
@@ -25,7 +27,7 @@ const cartReducer = (state = initialState, action) => {
             
             
             if (!bool) {cartAux.push({plant: action.payload, qty: 1})}
-            localStorage.setItem('cart', JSON.stringify(cartAux))
+            // localStorage.setItem('cart', JSON.stringify(cartAux))
             return {
                 ...state,
                 cart: cartAux,
@@ -43,7 +45,7 @@ const cartReducer = (state = initialState, action) => {
             const cartAux2 = [...state.cart]
             const index = cartAux2.findIndex(item => item.plant._id === action.payload.id)
             cartAux2[index].qty = action.payload.bool ? cartAux2[index].qty + 1 : cartAux2[index].qty - 1
-            localStorage.setItem('cart', JSON.stringify(cartAux2))
+            // localStorage.setItem('cart', JSON.stringify(cartAux2))
             return {
                 ...state,
                 cart: cartAux2,

@@ -9,6 +9,7 @@ import Blog from '../Screens/Blog';
 import SignInScreen from '../Screens/SignInScreen';
 import SignUpScreen from '../Screens/SignUpScreen';
 import Details from '../Screens/Details';
+import CartScreen from '../Screens/CartScreen';
 
 
 import { FontAwesome } from '@expo/vector-icons';
@@ -106,8 +107,14 @@ function MyTabs() {
                 headerShown: false, 
             }}
             />
+            <Tab.Screen name="Cart" component={CartScreen}
+            options={{
+                tabBarIcon: ({color, size}) => (<MaterialIcons name="shopping-cart" size={30} color="red" /> ),
+                headerShown: true, 
+            }}
+            />
         </Tab.Navigator>
-    );
+    )
 }
 
 export default function Navigation() {

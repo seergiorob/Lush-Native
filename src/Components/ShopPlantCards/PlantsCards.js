@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image, Button } from 'react-native'
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import plantActions from '../../redux/actions/plantActions'
+import cartActions from '../../redux/actions/cartActions'
 import { useNavigation } from "@react-navigation/native"
 
 const PlantsCards = () => {
@@ -10,12 +11,14 @@ const PlantsCards = () => {
 
     const dispatch = useDispatch()
     const allPlants = useSelector(state => state.plantReducer.allPlants)
+    const cart = useSelector(state => state. cartReducer.cart)
 
     useEffect(() => {
         dispatch(plantActions.fetchPlants())
     }, [])
 
-    // console.log(allPlants)
+    
+    console.log(cart)
 
   return (
     <View style={styles.wrapper}>
@@ -37,7 +40,13 @@ const PlantsCards = () => {
               onPress={()=> navigation.navigate('Details', {id:item._id
                     })}></Button>
 
+                <Button
+                title={'Add to Cart'}
+                onPress={() => dispatch(cartActions.addToCart(item))}
+                >
 
+                </Button>
+                
                 {/* <Button variant="text">
                   <LinkRouter style="linkCard" to={`/Details/${item._id}`}>DETAILS</LinkRouter>
                 </Button> */}
