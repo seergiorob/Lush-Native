@@ -3,8 +3,11 @@ import React, { useRef, useState } from 'react'
 import userActions from '../../redux/actions/userActions.js';
 import { connect } from 'react-redux';
 import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from "@react-navigation/native"
 
 function SignInComponent(props) {
+
+    const navigation = useNavigation()
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -63,6 +66,13 @@ function SignInComponent(props) {
     type="submit"
     title="Sign In"
     onPress={handleSubmit}
+    >
+    </Button>
+    <Button
+    // style={styles.button} 
+    type="submit"
+    title="or Please Register"
+    onPress={()=> navigation.navigate('SignUp')}
     >
     </Button>
     </>

@@ -9,21 +9,17 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import mainReducer from './src/redux/reducers/mainReducer.js'
-
-
+import Navigation from './src/Navigation/Navigation'
+ 
 export default function App() {
 
   const reduxStore = createStore(mainReducer, applyMiddleware(thunk))
 
   return (
     <Provider store={reduxStore}>
-    <View style={styles.container}>
-      <Home/>
-      {/* <Blog/> */}
-      {/* <SignInScreen/> */}
-      {/* <SignUpScreen/> */}
-      {/* <Shop/> */}
-    </View>
+      
+      <Navigation />
+
     </Provider>
   );
 }
