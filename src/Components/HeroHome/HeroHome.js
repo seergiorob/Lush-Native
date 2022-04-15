@@ -13,9 +13,7 @@ export default function HeroHome( {navigation} ) {
         >
         <Text style={styles.textHome}> Lush. </Text>
         <Text style={styles.textHome2}> Satisfying the human need to be connected to nature. </Text>
-        <Button 
-        title="SHOP NOW"
-        />
+        
 
       </ImageBackground>
     </View>

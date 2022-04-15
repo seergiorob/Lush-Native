@@ -22,10 +22,16 @@ function ProfileStack() {
             <ProfileStackNavigator.Screen
             name="ProfileScreen"
             component={SignInScreen}
+            options={{
+                headerShown: false,
+            }}
             />
             <ProfileStackNavigator.Screen
             name="SignUp"
             component={SignUpScreen}
+            options={{
+                headerShown: false,
+            }}
             />
         </ProfileStackNavigator.Navigator>
     )
@@ -58,7 +64,17 @@ function MyTabs() {
         initialRouteName='Home'
         screenOptions={{
             tabBarActiveTintColor: '#083900',
+            tabBarStyle: {
+                backgroundColor: 'whitesmoke',
+                position: 'absolute',
+                bottom: 25,
+                left: 20,
+                right: 20,
+                borderRadius: 25,
+                height: 90,
+            }
         }}
+        
         >
             <Tab.Screen name="Home" component={Home}
             options={{
