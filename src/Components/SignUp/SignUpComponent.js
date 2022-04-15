@@ -24,7 +24,6 @@ function SignUpComponent(props) {
           email: email,
           password: password,
           profileurl: photo,
-        //   country: country,
           from: 'signup'
         }
         props.signUpUser(userData)

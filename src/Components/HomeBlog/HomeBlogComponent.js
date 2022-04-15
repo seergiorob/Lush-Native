@@ -14,7 +14,6 @@ export default function HomeBlogComponent() {
 
     let blogPost = []
     blogPost.push(blogs[0])
-    console.log(blogPost)
 
   return (
 

@@ -23,7 +23,6 @@ function SignInComponent(props) {
         props.signInUser(loggedUser);
         
       };
-      console.log(props.user)
 
   return (
     <View style={styles.wrapperSignIn}>

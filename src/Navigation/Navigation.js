@@ -46,6 +46,9 @@ function MyStack() {
             <ShopStackNavigator.Screen
             name="ShopScreen"
             component={Shop}
+            options={{
+                headerShown: false,
+            }}
             />
             <ShopStackNavigator.Screen
             name="Details"
@@ -64,6 +67,7 @@ function MyTabs() {
         initialRouteName='Home'
         screenOptions={{
             tabBarActiveTintColor: '#083900',
+            // tabBarShowLabel: false,
             tabBarStyle: {
                 backgroundColor: 'whitesmoke',
                 position: 'absolute',
