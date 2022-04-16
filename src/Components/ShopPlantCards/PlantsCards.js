@@ -17,8 +17,6 @@ const PlantsCards = () => {
         dispatch(plantActions.fetchPlants())
     }, [])
 
-    
-    console.log(cart)
 
   return (
     <View style={styles.wrapper}>
@@ -26,7 +24,7 @@ const PlantsCards = () => {
         <View className="wrapperMediumSize">
         {allPlants.map((item) => {
           return (
-            <View style={styles.cardWrapper}>
+            <View style={styles.cardWrapper} key={item._id}>
               <Image 
               style={styles.imgCard} 
               source={{uri:`https://lush-plants.herokuapp.com/img/plants/${item.images}`}}

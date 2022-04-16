@@ -2,6 +2,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useSelector } from 'react-redux'
 
 import Home from '../Screens/Home';
 import Shop from '../Screens/Shop';
@@ -63,6 +64,9 @@ function MyStack() {
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
+
+    const cart = useSelector(state => state.cartReducer.cart)
+
     return (
         <Tab.Navigator
         initialRouteName='Home'
@@ -107,12 +111,15 @@ function MyTabs() {
                 headerShown: false, 
             }}
             />
+            
             <Tab.Screen name="Cart" component={CartScreen}
             options={{
-                tabBarIcon: ({color, size}) => (<MaterialIcons name="shopping-cart" size={30} color="red" /> ),
-                headerShown: true, 
+                tabBarIcon: ({color, size}) => (<MaterialIcons name="shopping-cart" size={30} color="black" /> ),
+                headerShown: true,
+                tabBarBadge: cart.length,
             }}
             />
+            
         </Tab.Navigator>
     )
 }
